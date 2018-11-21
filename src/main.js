@@ -21,12 +21,18 @@ import router from '@router';
 import Shared from '@/shared';
 Vue.use(Shared);
 
-new Vue({
+const app = new Vue({
     router,
     render: h => h(App),
-}).$mount('#app');
+    mounted() {
+        // 解决移动端 hover 问题
+        if (document) {
+            document.body.addEventListener('touchstart', function() { });
+        }
+    },
+});
 
-// 解决移动端 hover 问题
-if (document) {
-    document.body.addEventListener('touchstart', function() { });
-}
+router.onReady(() => {
+    app.$mount('#app');
+});
+

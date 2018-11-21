@@ -13,7 +13,7 @@
                 <ot-link :class="$style.btn" @click="handleGotoStartClick">
                     <ot-button size="big" circle>GET STARTED</ot-button>
                 </ot-link>
-                <ot-link :class="$style.btn" href="//github.com/2o3t/">
+                <ot-link :class="$style.btn" href="//github.com/2o3t/2o3t-GitMOJI">
                     <ot-button icon="github-fill" lib="font-ot" size="big" circle>GITHUB</ot-button>
                 </ot-link>
             </div>
