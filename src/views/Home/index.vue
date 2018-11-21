@@ -2,7 +2,12 @@
     <div :class="$style.root">
         <div :class="$style.banner">
             <div :class="$style.box">
-                <ot-icon :class="$style.logo" v-bind="$otColors.logo" icon="logo" lib="font-ot" size="20em"></ot-icon>
+                <div :class="$style.logo">
+                    <ot-icon v-bind="$otColors.logo" icon="logo" lib="font-ot" size="20em">
+                    </ot-icon>
+                    <ot-icon v-bind="$otColors.cry" :class="$style.iconCry" icon="logo-emoji-cry" lib="font-ot" size="20em">
+                    </ot-icon>
+                </div>
                 <p ot v-ot-bind="$otColors.logo" :class="$style.text">GitMOJI</p>
                 <p ot v-ot-bind="$otColors.desc" disabled>An emoji guide for your commit messages.</p>
                 <ot-link :class="$style.btn" @click="handleGotoStartClick">
@@ -16,9 +21,7 @@
         <div :class="$style.content">
             <application></application>
         </div>
-        <div>
-            <h-footer></h-footer>
-        </div>
+        <h-footer></h-footer>
     </div>
 </template>
 
@@ -32,6 +35,9 @@ export default {
             logo: {
                 normal: [ 'def-f' ],
             },
+            cry: {
+                normal: [ 'info-f-n' ],
+            },
             desc: {
                 disabled: [ 'def-f-dis' ],
             },
@@ -44,7 +50,7 @@ export default {
     methods: {
         handleGotoStartClick() {
             const els = document.getElementById('gitmoji');
-            const $content = this.$el.parentElement;
+            const $content = window;
             if (els && $content) {
                 const currentY = this.$el.scrollTop;
                 const targetY = els.offsetTop;
@@ -58,9 +64,17 @@ export default {
 <style lang="scss" module>
 .root {
 
+    &:after {
+        clear: both;
+    }
+    &:before, &:after{
+        display: table;
+        content: "";
+    }
+
     .banner {
         position: relative;
-        height: 100%;
+        height: 100vh;
         width: 100%;
         text-align: center;
 
@@ -72,7 +86,25 @@ export default {
         }
 
         .logo {
+            position: relative;
             line-height: 1;
+
+            .iconCry {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                transition: all 1s;
+                opacity: 0;
+                transform: scale(0);
+            }
+
+            &:hover .iconCry{
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .text {

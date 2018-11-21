@@ -94,17 +94,16 @@ export default {
 <style lang="scss" module>
 .root {
     position: relative;
-    height: 100%;
-    min-height: 50%;
+    min-height: 100%;
 
     &[theme='dark'] {
         background-color: #242424;
     }
 }
 .header {
-    // position: fixed;
-    // top: 0;
-    // left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 6em;
     z-index: 10;
@@ -125,25 +124,12 @@ export default {
     }
 }
 .main {
-    margin-top: -6em;
-    height: 100%;
-    overflow: hidden;
+    padding-top: 0em;
 
     .content {
-        box-sizing: border-box;
         height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
-
-
-    &:after {
-        clear: both;
-    }
-    &:before, &:after{
-        display: table;
-        content: "";
-    }
-}
-.footer {
-
 }
 </style>

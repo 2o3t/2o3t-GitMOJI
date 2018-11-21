@@ -17,20 +17,20 @@
 
 <script>
 export default {
-  otDefaultColors() {
-    return {
-        normal: ["def-f-n", "def-bg-n"],
-        text: {
-            normal: this.color === 'default' ? [ ] : ["light-f-n"],
-        },
-    };
-  },
-  data () {
-      return {
-          copyRight: '© 2018 2O3T.cn, Inc.',
-          byWho: 'Made with ❤ by 2O3T',
-      }
-  },
+    otDefaultColors() {
+        return {
+            normal: [ 'def-f-n', 'def-bg-n' ],
+            text: {
+                normal: this.color === 'default' ? [ ] : [ 'light-f-n' ],
+            },
+        };
+    },
+    data() {
+        return {
+            copyRight: '© 2018 2O3T.cn, Inc.',
+            byWho: 'Made with ❤ by 2O3T',
+        };
+    },
 };
 </script>
 

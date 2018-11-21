@@ -35,7 +35,7 @@ export default {
     },
     data() {
         return {
-            gitmojis: gitmojis,
+            gitmojis,
         };
     },
     computed: {
@@ -49,6 +49,7 @@ export default {
 
 <style lang="scss" module>
 .root {
+    position: relative;
 
     .card {
         min-width: 0;
@@ -64,6 +65,7 @@ export default {
 
     .top {
         text-align: center;
+        cursor: pointer;
     }
 
     .bottom {
