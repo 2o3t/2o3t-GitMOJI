@@ -73,7 +73,10 @@ export default {
     }
 
     .time {
-        float: right;
+        // float: right;
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
     }
 
     .title {
