@@ -2,12 +2,12 @@
     <footer ot v-bind="$otColors" :class="$style.root" :theme="$otTheme">
         <ot-row :gutter="10" :theme="$otTheme">
             <ot-col :class="$style.left" :xs="24" :sm="12">
-                <div ot v-ot-bind="$otColors.text">
+                <div ot v-bind="$otColors.text">
                     <ot-icon icon="logo" lib="font-ot">{{ copyRight }}</ot-icon>
                 </div>
             </ot-col>
             <ot-col :class="$style.right" :xs="24" :sm="12">
-                <div ot v-ot-bind="$otColors.text">
+                <div ot v-bind="$otColors.text">
                     {{ byWho }}
                 </div>
             </ot-col>
@@ -17,13 +17,20 @@
 
 <script>
 export default {
-    otDefaultColors() {
-        return {
-            normal: [ 'def-f-n', 'def-bg-n' ],
-            text: {
-                normal: this.color === 'default' ? [ ] : [ 'light-f-n' ],
-            },
-        };
+    otDefaultColors(theme) {
+        switch (theme) {
+            case 'dark':
+                return {
+                    normal: [ 'def-f-n', 'def-bg-n' ],
+                    text: [ 'dar-f-n' ],
+                };
+            case 'light':
+            default:
+                return {
+                    normal: [ 'def-f-n', 'def-bg-n' ],
+                    text: [ 'lig-f-n' ],
+                };
+        }
     },
     data() {
         return {

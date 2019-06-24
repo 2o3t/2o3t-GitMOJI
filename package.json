@@ -7,9 +7,6 @@
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint",
-        "sass:base": "node_modules/node-sass/bin/node-sass --watch libs/sass/base.scss libs/styles/base.css",
-        "sass:base:build": "node_modules/node-sass/bin/node-sass libs/sass/base.scss libs/styles/base.css",
-        "deploy:auto": "sh ./.2o3t/bin/autoDeploy.sh",
         "deploy": "sh ./bin/deploy.sh"
     },
     "private": true,
@@ -19,9 +16,9 @@
         "webs/**/*"
     ],
     "dependencies": {
-        "2o3t-css-colors": "^0.0.21",
+        "2o3t-css-colors": "^0.0.28",
         "2o3t-icon-font": "^0.0.16",
-        "2o3t-ui": "^0.0.71",
+        "2o3t-ui": "^0.1.16",
         "cheerio": "^1.0.0-rc.2",
         "clipboard-polyfill": "^2.7.0",
         "font-awesome": "^4.7.0",
