@@ -43,7 +43,7 @@
         "compression-webpack-plugin": "^2.0.0",
         "eslint-config-2o3t": "^1.1.1",
         "eslint-loader": "^2.1.1",
-        "node-sass": "^4.9.3",
+        "node-sass": "^7.0.0",
         "sass-loader": "^7.1.0",
         "vue": "^2.5.17",
         "vue-router": "^3.0.1",
